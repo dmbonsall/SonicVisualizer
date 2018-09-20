@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -268,6 +268,32 @@ Source: http://www.semiconductors.philips.com/acrobat_download/datasheets/74HC_H
 <pad name="1" x="-2.54" y="0" drill="0.6"/>
 <pad name="2" x="2.54" y="0" drill="0.6"/>
 </package>
+<package name="SOP06">
+<description>&lt;b&gt;SMALL OUTLINE PACKAGE&lt;/b&gt;</description>
+<wire x1="-3.4" y1="3.9" x2="3.4" y2="3.9" width="0.1998" layer="39"/>
+<wire x1="3.4" y1="3.9" x2="3.4" y2="-3.9" width="0.1998" layer="39"/>
+<wire x1="-3.4" y1="-3.9" x2="-3.4" y2="3.9" width="0.1998" layer="39"/>
+<wire x1="3.07" y1="2.26" x2="3.07" y2="-2.26" width="0.2032" layer="51"/>
+<wire x1="3.07" y1="-2.26" x2="-3.07" y2="-2.26" width="0.2032" layer="51"/>
+<wire x1="-3.07" y1="-2.26" x2="-3.07" y2="2.26" width="0.2032" layer="51"/>
+<wire x1="-3.07" y1="2.26" x2="3.07" y2="2.26" width="0.2032" layer="51"/>
+<wire x1="3.4" y1="-3.9" x2="-3.4" y2="-3.9" width="0.1998" layer="39"/>
+<smd name="1" x="-1.27" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="2" x="0" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="3" x="1.27" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="4" x="1.27" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="5" x="0" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="6" x="-1.27" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<text x="-3.175" y="-3.175" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="4.445" y="-3.175" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<text x="-0.635" y="-1.27" size="1.27" layer="21" rot="R90">1</text>
+<rectangle x1="-1.5199" y1="-3.49" x2="-1.0201" y2="-2.3599" layer="51"/>
+<rectangle x1="-0.2499" y1="-3.49" x2="0.2499" y2="-2.3599" layer="51"/>
+<rectangle x1="1.0201" y1="-3.49" x2="1.5199" y2="-2.3599" layer="51"/>
+<rectangle x1="1.0201" y1="2.3599" x2="1.5199" y2="3.49" layer="51"/>
+<rectangle x1="-0.2499" y1="2.3599" x2="0.2499" y2="3.49" layer="51"/>
+<rectangle x1="-1.5199" y1="2.3599" x2="-1.0201" y2="3.49" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="OP-AMP">
@@ -375,6 +401,20 @@ Source: http://www.semiconductors.philips.com/acrobat_download/datasheets/74HC_H
 <text x="-5.08" y="-2.54" size="1.27" layer="96">&gt;Value</text>
 <wire x1="-2.54" y1="0" x2="0" y2="0" width="0.254" layer="94" curve="-180"/>
 <wire x1="0" y1="0" x2="2.54" y2="0" width="0.254" layer="94" curve="180"/>
+</symbol>
+<symbol name="LTC6992">
+<pin name="SET" x="-5.08" y="2.54" length="middle" direction="in"/>
+<pin name="GND" x="-5.08" y="5.08" length="middle" direction="pwr"/>
+<pin name="MOD" x="-5.08" y="7.62" length="middle" direction="in"/>
+<pin name="OUT" x="20.32" y="7.62" length="middle" direction="out" rot="R180"/>
+<pin name="V+" x="20.32" y="5.08" length="middle" direction="pwr" rot="R180"/>
+<pin name="DIV" x="20.32" y="2.54" length="middle" direction="in" rot="R180"/>
+<wire x1="0" y1="0" x2="0" y2="10.16" width="0.254" layer="94"/>
+<wire x1="0" y1="10.16" x2="15.24" y2="10.16" width="0.254" layer="94"/>
+<wire x1="15.24" y1="10.16" x2="15.24" y2="0" width="0.254" layer="94"/>
+<wire x1="15.24" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<text x="0" y="10.922" size="1.778" layer="95">&gt;Name</text>
+<text x="0" y="-2.54" size="1.778" layer="96">&gt;Value</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -507,6 +547,26 @@ Source: http://www.semiconductors.philips.com/acrobat_download/datasheets/74HC_H
 <connects>
 <connect gate="G$1" pin="P$1" pad="1"/>
 <connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LTC6992" prefix="U">
+<gates>
+<gate name="G$1" symbol="LTC6992" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOP06">
+<connects>
+<connect gate="G$1" pin="DIV" pad="4"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="MOD" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="6"/>
+<connect gate="G$1" pin="SET" pad="3"/>
+<connect gate="G$1" pin="V+" pad="5"/>
 </connects>
 <technologies>
 <technology name=""/>
